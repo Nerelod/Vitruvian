@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FILE=~/Documents/vitruvian_start
+
+if [ -f "$FILE" ]; then
+	touch vitruvian_start
+	echo "python3 ~/Documents/vitruvian/start_menu.py" > vitruvian_start
+	chmod +x vitruvian_start
+	mv vitruvian_start /usr/local/bin
+else
+	mv vitruvian_start /usr/local/bin
+fi
