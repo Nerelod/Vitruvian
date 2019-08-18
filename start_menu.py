@@ -38,7 +38,8 @@ vitruvianIsActive = True
 while vitruvianIsActive == True:
     print("Choose an option")
     print("[1] Quit")
-    print("")
+    print("[2] Add Password")
+    print("[3] Delete Password")
     option = input()
     if(option.isdigit()):
         option = int(option)
@@ -47,4 +48,11 @@ while vitruvianIsActive == True:
 
     if option == 1:
         vitruvianIsActive = False
-
+    elif option == 2:
+        nameoffile = input("What is this password for? ")
+        os.system("touch ~/Documents/vitruvian/" + nameoffile + ".txt")
+        password = input("What is the password for " + nameoffile + "? ")
+        os.system("echo " + password + " >> ~/Documents/vitruvian/" + nameoffile + ".txt")
+    elif option == 3:
+        filetodelete = input("what password do you want to delete? ")
+        os.system("rm ~/Documents/vitruvian/" + filetodelete + ".txt")
